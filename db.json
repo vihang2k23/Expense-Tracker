@@ -1,21 +1,12 @@
 {
   "Data": [
     {
-      "id": "d5b5",
+      "id": "dbf1",
       "type": "exp",
       "payment_type": "Cash",
-      "description": "1111111111",
-      "entry_date": "2024-06-04",
-      "amount": "111111111",
-      "": "Debit Card"
-    },
-    {
-      "type": "exp",
-      "payment_type": "Cash",
-      "description": "111",
-      "entry_date": "2024-11-21",
-      "amount": "111",
-      "id": "4391"
+      "description": "aa",
+      "entry_date": "2024-06-21",
+      "amount": "111"
     }
   ]
 }

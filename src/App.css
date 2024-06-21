@@ -105,3 +105,75 @@
   border-color: #55d901 !important;
   --bs-form-check-bg-image: none !important;
 }
+
+  /* For Chrome, Safari, Edge, Opera */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* For Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  .icon-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .action-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .action-icon:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  
+  .amount {
+    font-size: 18px;
+  }
+  /* Add this CSS to your existing CSS file or create a new one */
+
+/* Style for the container */
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style for the date input */
+.input-container input[type="date"],
+.input-container input[type="text"],
+.input-container input[type="number"],
+.input-container select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+/* Style for the action icons */
+.input-container .action-icons {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the edit and delete icons */
+.input-container .action-icons img {
+  height: 20px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* Style for the amount */
+.input-container .amount {
+  font-weight: bold;
+  margin-left: 10px;
+}
+

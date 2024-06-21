@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 import { deleteObject, updateObject } from '../state/store'; // Assuming these are your action creators
+import "../App.css"; // Correct path after moving the CSS file
 
 const ExpenseList = () => {
   const [entryList, setEntryList] = useState([]);
@@ -60,8 +61,6 @@ const ExpenseList = () => {
 
   const handleEditChange = (e) => {
     const { name, value } = e.target;
-    console.log('name, value: ', name, value);
-    console.log('e.target: ', e.target);
     setEditData({ ...editData, [name]: value });
   };
 
@@ -115,64 +114,65 @@ const ExpenseList = () => {
                   className={`${entry.type === "inc" ? "income" : "expense"}-li mb-2`}
                   style={{ position: "relative" }}
                 >
-                  {editId === entry.id ? (
-                    <div className="d-flex justify-content-between align-items-center">
-                      <div className="d-flex align-items-center" style={{ maxWidth: "100%" }}>
-                        <div className="date-sec me-3">
-                          <input
-                            type="date"
-                            name="entry_date"
-                            value={editData.entry_date}
-                            onChange={handleEditChange}
-                          />
-                        </div>
-                        <div className="d-flex flex-column desc-section text-start">
-                          <input
-                            type="text"
-                            name="description"
-                            value={editData.description}
-                            onChange={handleEditChange}
-                          />
-                          {/* <input
-                            type="text"
-                            name="payment_type"
-                            value={editData.payment_type}
-                            onChange={handleEditChange}
-                          /> */}
-                          <select className="form-select" aria-label="Default select example" onChange={handleEditChange}>
-            <option value="Cash">Cash</option>
-            <option value="Bank Account">Bank Account</option>
-            <option value="Credit Card">Credit Card</option>
-            <option value="Debit Card">Debit Card</option>
-            <option value="UPI">UPI</option>
-          </select>
-                        </div>
-                      </div>
-                      <div className="d-flex align-items-center action-icons">
-                        <img
-                          src="./correct.png"
-                          className="action-icon me-2"
-                          alt="correct"
-                          onClick={() => saveEdit(entry.id)}
-                          style={{ height: "20px", cursor: "pointer" }}
-                        />
-                        <img
-                          src="./cancel.png"
-                          className="action-icon"
-                          onClick={cancelEdit}
-                          alt="cancel"
-                          style={{ height: "20px", cursor: "pointer" }}
-                        />
-                      </div>
-                      <div>
-                        <input
-                          type="number"
-                          name="amount"
-                          value={editData.amount}
-                          onChange={handleEditChange}
-                        />
-                      </div>
-                    </div>
+                {editId === entry.id ? (
+                    <div className="input-container">
+  <div className="d-flex align-items-center">
+    <div className="date-sec me-3">
+      <input
+        className="form-control"
+        type="date"
+        name="entry_date"
+        value={editData.entry_date}
+        onChange={handleEditChange}
+      />
+    </div>
+    <div className="d-flex flex-column desc-section text-start">
+      <input
+        className="form-control"
+        type="text"
+        name="description"
+        value={editData.description}
+        onChange={handleEditChange}
+      />
+      <select
+        className="form-control"
+        name="payment_type"
+        value={editData.payment_type}
+        onChange={handleEditChange}
+      >
+        <option value="Cash">Cash</option>
+        <option value="Bank Account">Bank Account</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Debit Card">Debit Card</option>
+        <option value="UPI">UPI</option>
+      </select>
+    </div>
+  </div>
+  <div className="d-flex align-items-center action-icons">
+    <img
+      src="./correct.png"
+      className="action-icon me-2"
+      alt="correct"
+      onClick={() => saveEdit(entry.id)}
+    />
+    <img
+      src="./cancel.png"
+      className="action-icon"
+      onClick={cancelEdit}
+      alt="cancel"
+    />
+  </div>
+  <div>
+    <input
+      className="form-control"
+      type="number"
+      name="amount"
+      value={editData.amount}
+      onChange={handleEditChange}
+    />
+  </div>
+</div>
+
                   ) : (
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="d-flex align-items-center" style={{ maxWidth: "100%" }}>
