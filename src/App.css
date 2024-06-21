@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+.expense-form-card{
+  padding: 25px;
+  margin: 25px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.expense-list-card{
+  padding: 25px;
+  margin: 25px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.select-type-section{
+  margin: 15px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.total-income-card{
+  padding: 25px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.income-li:hover .action-icons {
+  visibility: visible;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.total-income-card h2 {
+  color: #55d901;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.total-expense-card h2 {
+  color: #ff1212;
+} 
+.total-expense-card{
+  padding: 25px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.transection-list ul {
+  list-style: none;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.transection-list ul li{
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 10px;
+}
+
+.transection-list ul .income-li{
+  border-left: 5px solid #55d901;
+}
+
+.transection-list ul .income-li .amount{
+  color: #55d901;
+}
+
+.desc-section small{
+  color: gray;
+  font-size: 10px;
+}
+
+
+.transection-list ul .expense-li .amount{
+  color: #ff1212;
+}
+.date-sec{
+  line-height: 10px;
+  font-size: 14px;
+}
+.date-sec small{
+  font-size: 10px;
+}
+.date-sec h5{
+  line-height: 16px;
+  font-weight: 700;
+  margin: 0px;
+}
+
+.transection-list ul .expense-li{
+  border-left: 5px solid #ff1212;
+}
+
+.expense-income-form{
+  text-align: left;
+}
+.expense-income-form label{
+  font-weight: 500;
+}
+
+.form-check-input:focus{
+  box-shadow: none !important;
+}
+.expense-input:checked{
+  background-color: #ff1212 !important;
+  border-color: #ff1212 !important;
+  --bs-form-check-bg-image: none !important;
+}
+
+.income-input:checked{
+  background-color: #55d901 !important;
+  border-color: #55d901 !important;
+  --bs-form-check-bg-image: none !important;
 }
