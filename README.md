@@ -9,4 +9,4 @@ In the project directory, you can run:
 ### `npm start`
 
 And Start JSON Server Using this command 
-npx json-server db.json
+###  `npx json-server db.json`
