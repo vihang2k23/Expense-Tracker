@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 import { deleteObject, updateObject } from '../state/store'; // Assuming these are your action creators
 import "../App.css"; // Correct path after moving the CSS file
-
+import notify from './Notify.js';
 const ExpenseList = () => {
   const [entryList, setEntryList] = useState([]);
   const [totalIncome, setTotalIncome] = useState(0);
@@ -45,6 +45,7 @@ const ExpenseList = () => {
     .then(res => res.json())
     .then(() => {
       dispatch(deleteObject(id)); // Update the store with the id of the deleted object
+      notify.success('Deleted Transcation Successfully')
     })
     .catch(error => console.error('Error deleting data:', error));
   };
@@ -77,6 +78,7 @@ const ExpenseList = () => {
       dispatch(updateObject(result));
       cancelEdit();
       calculateTotals([...entryList.filter(entry => entry.id !== id), result]);
+      notify.success('Updated Transcation Successfully')
     })
     .catch((error) => console.log("error", error));
   };

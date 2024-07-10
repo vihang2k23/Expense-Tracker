@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import moment from "moment";
 import { useDispatch } from 'react-redux';  
 import { addObject } from '../state/store';
+import { useNavigate } from 'react-router-dom';
+import notify from './Notify.js';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ExpenseForm = () => {
   const [entryType, setEntryType] = useState('exp');
@@ -9,7 +12,7 @@ const ExpenseForm = () => {
   const [description, setDescription] = useState('');
   const [entryDate, setEntryDate] = useState(moment().format('YYYY-MM-DD'));
   const [entryAmount, setEntryAmount] = useState(0);
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const entryTypeChange = (e) => {
@@ -66,12 +69,18 @@ const ExpenseForm = () => {
     .then((result) => {
       dispatch(addObject(result)); // Dispatch the result with the id
       clearAllInputs();
+      notify.success('Transaction added successfully!');
+      navigate('/')
     })
-    .catch((error) => console.log("error", error));
+    .catch((error) => {
+      notify.error('Error adding transaction!');
+      console.log("error", error);
+    });
   };
 
   return (
     <div className="expense-form-card">
+    
       <h2>Add Transaction</h2>
 
       <div className="select-type-section d-flex justify-content-around">
