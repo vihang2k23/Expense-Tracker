@@ -1,12 +1,20 @@
 {
   "Data": [
     {
-      "id": "dbf1",
+      "id": "b1e7",
+      "type": "inc",
+      "payment_type": "Bank Account",
+      "description": "65kl",
+      "entry_date": "2024-05-31",
+      "amount": "33333"
+    },
+    {
+      "id": "a19f",
       "type": "exp",
-      "payment_type": "Cash",
-      "description": "aa",
+      "payment_type": "Credit Card",
+      "description": "65",
       "entry_date": "2024-06-21",
-      "amount": "111"
+      "amount": "846"
     }
   ]
 }
